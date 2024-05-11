@@ -1,0 +1,1328 @@
+{
+    "modelName": "petopia",
+    "collections": [
+        {
+            "collectionName": "user",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "name",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "51324ab6-2dfb-4077-95d0-8f505d675b30",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "password",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "1f19e094-c324-4807-912e-6da58ac9b98a",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "email",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "6d033119-e2cb-47c6-a49a-a444a03ea450",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "image",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "84ab8b92-a26a-4522-afb8-c173eae5b45d",
+                    "error": {}
+                },
+                {
+                    "name": "role",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "86bc517f-8df1-4433-81ff-1dd4eb40b81c",
+                    "error": {
+                        "enum": false,
+                        "enums": [
+                            false,
+                            false
+                        ]
+                    },
+                    "enum": [
+                        "admin",
+                        "user"
+                    ]
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "180f1215-9510-4a1c-bac9-d5f862e1ba36"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "e0ad8576-63e5-40f9-a261-e234ba904852",
+            "bucketId": "53a4718e-2475-4660-ae29-e2977e68253d"
+        },
+        {
+            "collectionName": "cart",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "totalCartPrice",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "d9c5c19b-6ac5-4c71-9c2b-9f81474a80c2",
+                    "error": {}
+                },
+                {
+                    "name": "cartItems",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "array",
+                    "properties": [
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "f5998eb5-8296-4194-9b83-4e67f00d322f",
+                            "arrayItem": true,
+                            "displayName": "price",
+                            "error": {}
+                        },
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "objectId",
+                            "GUID": "aa8d8494-9792-49f9-a8cd-25e59e79ced3",
+                            "arrayItem": true,
+                            "displayName": "product",
+                            "error": {}
+                        },
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "1645914c-9b3a-4b22-bd75-647e4fc6f0b6",
+                            "arrayItem": true,
+                            "displayName": "quantity",
+                            "error": {}
+                        }
+                    ],
+                    "additionalItems": true,
+                    "GUID": "76c3ffee-663b-4121-be3c-929275f31887",
+                    "error": {}
+                },
+                {
+                    "name": "totalPriceAfterDiscount",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "2e2e9c56-807e-4a71-bf1c-e8b76613eee5",
+                    "error": {}
+                },
+                {
+                    "name": "userId",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "error": {},
+                    "GUID": "9e246dbb-4b6f-4d59-8326-181addc2e889"
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "e2d604c8-8621-460e-bb18-f3c5285fbe16"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "2e108ffa-37a7-4897-8036-9a373be497a3",
+            "bucketId": "53a4718e-2475-4660-ae29-e2977e68253d"
+        },
+        {
+            "collectionName": "order",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "user",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "GUID": "03723ed0-b7c1-4028-87de-d1d1a73b6c92",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "taxPrice",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "error": {},
+                    "GUID": "6b30d704-1727-43cf-8089-8dd3d8784f36"
+                },
+                {
+                    "name": "cartItems",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "array",
+                    "properties": [
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "aff016cb-06c1-4967-919e-50b24f7836f4",
+                            "arrayItem": true,
+                            "displayName": "price",
+                            "error": {}
+                        },
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "objectId",
+                            "GUID": "a82b4e9f-e7a7-45a3-9842-52ff3f2e20d3",
+                            "arrayItem": true,
+                            "displayName": "product",
+                            "error": {}
+                        },
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "numeric",
+                            "GUID": "5647c378-2b8d-48fc-813f-6cae9bc3b4f3",
+                            "arrayItem": true,
+                            "displayName": "quantity",
+                            "error": {}
+                        }
+                    ],
+                    "additionalItems": true,
+                    "GUID": "127c9ea3-9380-4a85-98f4-944d8016dde5",
+                    "error": {
+                        "name": false,
+                        "code": false
+                    },
+                    "foreignCollection": "",
+                    "foreignField": []
+                },
+                {
+                    "name": "shippingPrice",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "error": {},
+                    "GUID": "4500c0ac-22b0-4b9f-be24-d59d1467e169"
+                },
+                {
+                    "name": "totalOrderPrice",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "error": {},
+                    "GUID": "75b9bdce-83f6-4bf1-b90b-0d0d53c331f1"
+                },
+                {
+                    "name": "paymentMethodType",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "error": {},
+                    "GUID": "25aedd5a-6323-436f-8b13-f55ca9a0baf8"
+                },
+                {
+                    "name": "isPaid",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "boolean",
+                    "error": {},
+                    "GUID": "820899c8-ae12-4ac1-b9a5-993c38267917"
+                },
+                {
+                    "name": "isDelivered",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "boolean",
+                    "error": {},
+                    "GUID": "45f6ca51-b389-4e7e-88b8-687796e1b863"
+                },
+                {
+                    "name": "deliveredAt",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "date",
+                    "primaryKey": false,
+                    "error": {},
+                    "GUID": "daa7bba5-dbb2-4e84-b21e-502513a812c6"
+                },
+                {
+                    "name": "paidAt",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "date",
+                    "primaryKey": false,
+                    "error": {},
+                    "GUID": "b9634433-b31e-4732-8dd6-2bafc06dc31e"
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "f3827815-63b0-4ce0-83f0-66f12efb84e7"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "09796717-6ad2-4e52-8316-a9a8781824d0",
+            "bucketId": "53a4718e-2475-4660-ae29-e2977e68253d"
+        },
+        {
+            "collectionName": "product",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "name",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "2fddf8e9-e8ea-45f2-a458-6b4330435436",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "type",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "30079284-8f50-41d1-be19-d08bda2a20ff",
+                    "enum": [
+                        "pet",
+                        "need"
+                    ],
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "category",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "0fca41e6-56da-48be-b1b4-012f40a8a1b8",
+                    "primaryKey": false,
+                    "error": {}
+                },
+                {
+                    "name": "description",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "a9843758-dbbe-4dd9-9d94-392e19aaca3b",
+                    "required": false,
+                    "error": {}
+                },
+                {
+                    "name": "quantity",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "error": {},
+                    "GUID": "46718659-5658-4267-ad79-29fc01838fa0"
+                },
+                {
+                    "name": "gender",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "e66fc49c-df7e-411c-b379-436ff507718c",
+                    "error": {}
+                },
+                {
+                    "name": "age",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "bc9d2271-8c92-45b9-833d-44e7bff947d3",
+                    "error": {}
+                },
+                {
+                    "name": "breed",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "6f993c83-803b-489d-a1c3-bc98fb7fe0a5",
+                    "error": {}
+                },
+                {
+                    "name": "price",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "GUID": "91ac5352-a4ed-487c-8cca-00d26e81b2c6",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "name": "sold",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "numeric",
+                    "error": {},
+                    "GUID": "d1741e75-6eff-432c-bb44-4a199d47e647"
+                },
+                {
+                    "name": "image",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "bc3e3a15-b5d0-4bea-b342-a785686149bd",
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "40513014-3793-4fac-abbd-24f170d28db2"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "68e6949e-353d-4128-a41e-7ab8e34846cd",
+            "bucketId": "53a4718e-2475-4660-ae29-e2977e68253d"
+        }
+    ],
+    "buckets": [
+        {
+            "name": "petopia",
+            "type": "bucket",
+            "collectionIds": [
+                "e0ad8576-63e5-40f9-a261-e234ba904852",
+                "2e108ffa-37a7-4897-8036-9a373be497a3",
+                "09796717-6ad2-4e52-8316-a9a8781824d0",
+                "68e6949e-353d-4128-a41e-7ab8e34846cd"
+            ],
+            "backgroundColor": {
+                "r": 216,
+                "g": 0,
+                "b": 115,
+                "a": 1
+            },
+            "show": true,
+            "isActivated": true,
+            "GUID": "53a4718e-2475-4660-ae29-e2977e68253d"
+        }
+    ],
+    "views": [],
+    "relationships": [
+        {
+            "name": "UserCart",
+            "relationshipType": "",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childField": [],
+            "isActivated": true,
+            "childCardinality": "1",
+            "GUID": "343c0fbf-f98a-437e-8ee0-9f23b6f397dd",
+            "parentCollection": "e0ad8576-63e5-40f9-a261-e234ba904852",
+            "childCollection": "2e108ffa-37a7-4897-8036-9a373be497a3",
+            "hackoladeStyles": {
+                "GUID": "a9d5ed02-efcf-4d36-9f86-5cfa91f1a6a1",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1423,
+                        "y": 1016
+                    },
+                    {
+                        "x": 1344.5,
+                        "y": 1016
+                    },
+                    {
+                        "x": 1344.5,
+                        "y": 1025.5
+                    },
+                    {
+                        "x": 1266,
+                        "y": 1025.5
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "right"
+                ]
+            }
+        },
+        {
+            "name": "cartOrder",
+            "relationshipType": "",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childField": [],
+            "isActivated": true,
+            "childCardinality": "1",
+            "GUID": "3d405aa9-c054-4888-8b72-1b6826744b51",
+            "childCollection": "09796717-6ad2-4e52-8316-a9a8781824d0",
+            "parentCollection": "2e108ffa-37a7-4897-8036-9a373be497a3",
+            "hackoladeStyles": {
+                "GUID": "2670bb1c-1150-41f9-8508-9277ed46e1ca",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1323,
+                        "y": 1272
+                    },
+                    {
+                        "x": 1373,
+                        "y": 1272
+                    },
+                    {
+                        "x": 1373,
+                        "y": 1069
+                    },
+                    {
+                        "x": 1423,
+                        "y": 1069
+                    }
+                ],
+                "sides": [
+                    "right",
+                    "left"
+                ]
+            }
+        },
+        {
+            "name": "orderProduct",
+            "relationshipType": "",
+            "parentField": [],
+            "parentCardinality": "1..n",
+            "childField": [],
+            "isActivated": true,
+            "childCardinality": "1",
+            "GUID": "b56e79a3-f43d-4384-972b-e6dfd3f39beb",
+            "parentCollection": "09796717-6ad2-4e52-8316-a9a8781824d0",
+            "childCollection": "68e6949e-353d-4128-a41e-7ab8e34846cd",
+            "hackoladeStyles": {
+                "GUID": "a81711d9-a16b-4bf3-9532-41b543512aa3",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1402,
+                        "y": 1311.5
+                    },
+                    {
+                        "x": 1362.5,
+                        "y": 1311.5
+                    },
+                    {
+                        "x": 1362.5,
+                        "y": 1361
+                    },
+                    {
+                        "x": 1323,
+                        "y": 1361
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "right"
+                ]
+            }
+        },
+        {
+            "name": "cartProduct",
+            "relationshipType": "",
+            "parentField": [],
+            "parentCardinality": "1..n",
+            "childField": [],
+            "isActivated": true,
+            "childCardinality": "1..n",
+            "GUID": "322c14fd-9821-4585-bbfb-0c8464df5c6a",
+            "parentCollection": "2e108ffa-37a7-4897-8036-9a373be497a3",
+            "childCollection": "68e6949e-353d-4128-a41e-7ab8e34846cd",
+            "hackoladeStyles": {
+                "GUID": "f949839e-a518-473f-a2c2-5908f7c34665",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 1508.5,
+                        "y": 1196
+                    },
+                    {
+                        "x": 1508.5,
+                        "y": 1159
+                    },
+                    {
+                        "x": 1551.5,
+                        "y": 1159
+                    },
+                    {
+                        "x": 1551.5,
+                        "y": 1122
+                    }
+                ],
+                "sides": [
+                    "top",
+                    "bottom"
+                ]
+            }
+        }
+    ],
+    "users": [
+        {
+            "name": "New User",
+            "parentFieldKeyword": "users",
+            "fieldKeyword": "users",
+            "path": [],
+            "data": {
+                "modelName": "petopia",
+                "collections": [
+                    {
+                        "collectionName": "user",
+                        "type": "object",
+                        "properties": [],
+                        "definitions": {
+                            "type": "definitions",
+                            "properties": [],
+                            "GUID": "180f1215-9510-4a1c-bac9-d5f862e1ba36"
+                        },
+                        "isActivated": true,
+                        "additionalProperties": false,
+                        "validationLevel": "Off",
+                        "validationAction": "Warn",
+                        "storageEngineName": "WiredTiger",
+                        "collectionUsers": [],
+                        "indexes": [],
+                        "collation": {},
+                        "sharding": {
+                            "unique": true,
+                            "collation": "null"
+                        },
+                        "GUID": "e0ad8576-63e5-40f9-a261-e234ba904852",
+                        "bucketId": "53a4718e-2475-4660-ae29-e2977e68253d"
+                    },
+                    {
+                        "collectionName": "product",
+                        "type": "object",
+                        "properties": [],
+                        "definitions": {
+                            "type": "definitions",
+                            "properties": [],
+                            "GUID": "6556bb4c-fce9-44e3-b5fc-d6e58a9cd446"
+                        },
+                        "isActivated": true,
+                        "additionalProperties": false,
+                        "validationLevel": "Off",
+                        "validationAction": "Warn",
+                        "storageEngineName": "WiredTiger",
+                        "collectionUsers": [],
+                        "indexes": [],
+                        "collation": {},
+                        "sharding": {
+                            "unique": true,
+                            "collation": "null"
+                        },
+                        "GUID": "a385f366-0405-46b8-a32a-1a2aeb62b786"
+                    },
+                    {
+                        "collectionName": "cart",
+                        "type": "object",
+                        "properties": [],
+                        "definitions": {
+                            "type": "definitions",
+                            "properties": [],
+                            "GUID": "e2d604c8-8621-460e-bb18-f3c5285fbe16"
+                        },
+                        "isActivated": true,
+                        "additionalProperties": false,
+                        "validationLevel": "Off",
+                        "validationAction": "Warn",
+                        "storageEngineName": "WiredTiger",
+                        "collectionUsers": [],
+                        "indexes": [],
+                        "collation": {},
+                        "sharding": {
+                            "unique": true,
+                            "collation": "null"
+                        },
+                        "GUID": "2e108ffa-37a7-4897-8036-9a373be497a3",
+                        "bucketId": "53a4718e-2475-4660-ae29-e2977e68253d"
+                    },
+                    {
+                        "collectionName": "order",
+                        "type": "object",
+                        "properties": [],
+                        "definitions": {
+                            "type": "definitions",
+                            "properties": [],
+                            "GUID": "f3827815-63b0-4ce0-83f0-66f12efb84e7"
+                        },
+                        "isActivated": true,
+                        "additionalProperties": false,
+                        "validationLevel": "Off",
+                        "validationAction": "Warn",
+                        "storageEngineName": "WiredTiger",
+                        "collectionUsers": [],
+                        "indexes": [],
+                        "collation": {},
+                        "sharding": {
+                            "unique": true,
+                            "collation": "null"
+                        },
+                        "GUID": "09796717-6ad2-4e52-8316-a9a8781824d0"
+                    }
+                ],
+                "buckets": [
+                    {
+                        "name": "petopia",
+                        "type": "bucket",
+                        "collectionIds": [
+                            "e0ad8576-63e5-40f9-a261-e234ba904852",
+                            "2e108ffa-37a7-4897-8036-9a373be497a3"
+                        ],
+                        "backgroundColor": {
+                            "r": 216,
+                            "g": 0,
+                            "b": 115,
+                            "a": 1
+                        },
+                        "show": true,
+                        "isActivated": true,
+                        "GUID": "53a4718e-2475-4660-ae29-e2977e68253d"
+                    }
+                ],
+                "views": [],
+                "relationships": [],
+                "users": [],
+                "diagramViews": [],
+                "idToNameHashTable": {
+                    "53a4718e-2475-4660-ae29-e2977e68253d": "petopia",
+                    "e0ad8576-63e5-40f9-a261-e234ba904852": "user",
+                    "a385f366-0405-46b8-a32a-1a2aeb62b786": "product",
+                    "2e108ffa-37a7-4897-8036-9a373be497a3": "cart",
+                    "09796717-6ad2-4e52-8316-a9a8781824d0": "order"
+                },
+                "definitions": {
+                    "type": "definitions",
+                    "properties": [],
+                    "GUID": "821bedd3-fe00-448c-a5ae-587a45e114cc"
+                },
+                "polyglotDefinitions": {
+                    "type": "polyglotDefinitions",
+                    "properties": [],
+                    "GUID": "45fa0977-28f5-4f02-97e1-bb677595edcf"
+                },
+                "externalDefinitions": {
+                    "type": "externalDefinitions",
+                    "properties": [],
+                    "GUID": "7f6881ff-1409-4474-b09b-824cfaa452aa"
+                },
+                "modelAutoSaved": false,
+                "sources": [],
+                "decorativeSymbols": [],
+                "dbVersion": "v7.x",
+                "dbVendor": "MongoDB",
+                "appTarget": "MONGODB",
+                "creationTS": "2024-05-08T19:59:53.270Z",
+                "GUID": "84076ad5-87ee-40c1-8736-5fd48741efd1",
+                "modelChanged": true,
+                "isLineageEnabled": false,
+                "hackoladeMeta": {
+                    "validationErrors": {
+                        "modelName": false
+                    }
+                },
+                "options": [
+                    "e0ad8576-63e5-40f9-a261-e234ba904852",
+                    "a385f366-0405-46b8-a32a-1a2aeb62b786",
+                    "2e108ffa-37a7-4897-8036-9a373be497a3",
+                    "09796717-6ad2-4e52-8316-a9a8781824d0"
+                ],
+                "compositeOptions": [
+                    "e0ad8576-63e5-40f9-a261-e234ba904852",
+                    "a385f366-0405-46b8-a32a-1a2aeb62b786",
+                    "2e108ffa-37a7-4897-8036-9a373be497a3",
+                    "09796717-6ad2-4e52-8316-a9a8781824d0"
+                ]
+            },
+            "GUID": "9f7a62c8-d2d3-4958-a6f2-27d466992e52"
+        },
+        {
+            "name": "New User(1)",
+            "parentFieldKeyword": "users",
+            "fieldKeyword": "users",
+            "path": [],
+            "data": {
+                "modelName": "petopia",
+                "collections": [
+                    {
+                        "collectionName": "user",
+                        "type": "object",
+                        "properties": [],
+                        "definitions": {
+                            "type": "definitions",
+                            "properties": [],
+                            "GUID": "180f1215-9510-4a1c-bac9-d5f862e1ba36"
+                        },
+                        "isActivated": true,
+                        "additionalProperties": false,
+                        "validationLevel": "Off",
+                        "validationAction": "Warn",
+                        "storageEngineName": "WiredTiger",
+                        "collectionUsers": [],
+                        "indexes": [],
+                        "collation": {},
+                        "sharding": {
+                            "unique": true,
+                            "collation": "null"
+                        },
+                        "GUID": "e0ad8576-63e5-40f9-a261-e234ba904852",
+                        "bucketId": "53a4718e-2475-4660-ae29-e2977e68253d"
+                    },
+                    {
+                        "collectionName": "product",
+                        "type": "object",
+                        "properties": [],
+                        "definitions": {
+                            "type": "definitions",
+                            "properties": [],
+                            "GUID": "6556bb4c-fce9-44e3-b5fc-d6e58a9cd446"
+                        },
+                        "isActivated": true,
+                        "additionalProperties": false,
+                        "validationLevel": "Off",
+                        "validationAction": "Warn",
+                        "storageEngineName": "WiredTiger",
+                        "collectionUsers": [],
+                        "indexes": [],
+                        "collation": {},
+                        "sharding": {
+                            "unique": true,
+                            "collation": "null"
+                        },
+                        "GUID": "a385f366-0405-46b8-a32a-1a2aeb62b786"
+                    },
+                    {
+                        "collectionName": "cart",
+                        "type": "object",
+                        "properties": [],
+                        "definitions": {
+                            "type": "definitions",
+                            "properties": [],
+                            "GUID": "e2d604c8-8621-460e-bb18-f3c5285fbe16"
+                        },
+                        "isActivated": true,
+                        "additionalProperties": false,
+                        "validationLevel": "Off",
+                        "validationAction": "Warn",
+                        "storageEngineName": "WiredTiger",
+                        "collectionUsers": [],
+                        "indexes": [],
+                        "collation": {},
+                        "sharding": {
+                            "unique": true,
+                            "collation": "null"
+                        },
+                        "GUID": "2e108ffa-37a7-4897-8036-9a373be497a3",
+                        "bucketId": "53a4718e-2475-4660-ae29-e2977e68253d"
+                    },
+                    {
+                        "collectionName": "order",
+                        "type": "object",
+                        "properties": [],
+                        "definitions": {
+                            "type": "definitions",
+                            "properties": [],
+                            "GUID": "f3827815-63b0-4ce0-83f0-66f12efb84e7"
+                        },
+                        "isActivated": true,
+                        "additionalProperties": false,
+                        "validationLevel": "Off",
+                        "validationAction": "Warn",
+                        "storageEngineName": "WiredTiger",
+                        "collectionUsers": [],
+                        "indexes": [],
+                        "collation": {},
+                        "sharding": {
+                            "unique": true,
+                            "collation": "null"
+                        },
+                        "GUID": "09796717-6ad2-4e52-8316-a9a8781824d0"
+                    }
+                ],
+                "buckets": [
+                    {
+                        "name": "petopia",
+                        "type": "bucket",
+                        "collectionIds": [
+                            "e0ad8576-63e5-40f9-a261-e234ba904852",
+                            "2e108ffa-37a7-4897-8036-9a373be497a3"
+                        ],
+                        "backgroundColor": {
+                            "r": 216,
+                            "g": 0,
+                            "b": 115,
+                            "a": 1
+                        },
+                        "show": true,
+                        "isActivated": true,
+                        "GUID": "53a4718e-2475-4660-ae29-e2977e68253d"
+                    }
+                ],
+                "views": [],
+                "relationships": [],
+                "users": [
+                    {
+                        "name": "New User",
+                        "parentFieldKeyword": "users",
+                        "fieldKeyword": "users",
+                        "path": [],
+                        "data": {
+                            "modelName": "petopia",
+                            "collections": [
+                                {
+                                    "collectionName": "user",
+                                    "type": "object",
+                                    "properties": [],
+                                    "definitions": {
+                                        "type": "definitions",
+                                        "properties": [],
+                                        "GUID": "180f1215-9510-4a1c-bac9-d5f862e1ba36"
+                                    },
+                                    "isActivated": true,
+                                    "additionalProperties": false,
+                                    "validationLevel": "Off",
+                                    "validationAction": "Warn",
+                                    "storageEngineName": "WiredTiger",
+                                    "collectionUsers": [],
+                                    "indexes": [],
+                                    "collation": {},
+                                    "sharding": {
+                                        "unique": true,
+                                        "collation": "null"
+                                    },
+                                    "GUID": "e0ad8576-63e5-40f9-a261-e234ba904852",
+                                    "bucketId": "53a4718e-2475-4660-ae29-e2977e68253d"
+                                },
+                                {
+                                    "collectionName": "product",
+                                    "type": "object",
+                                    "properties": [],
+                                    "definitions": {
+                                        "type": "definitions",
+                                        "properties": [],
+                                        "GUID": "6556bb4c-fce9-44e3-b5fc-d6e58a9cd446"
+                                    },
+                                    "isActivated": true,
+                                    "additionalProperties": false,
+                                    "validationLevel": "Off",
+                                    "validationAction": "Warn",
+                                    "storageEngineName": "WiredTiger",
+                                    "collectionUsers": [],
+                                    "indexes": [],
+                                    "collation": {},
+                                    "sharding": {
+                                        "unique": true,
+                                        "collation": "null"
+                                    },
+                                    "GUID": "a385f366-0405-46b8-a32a-1a2aeb62b786"
+                                },
+                                {
+                                    "collectionName": "cart",
+                                    "type": "object",
+                                    "properties": [],
+                                    "definitions": {
+                                        "type": "definitions",
+                                        "properties": [],
+                                        "GUID": "e2d604c8-8621-460e-bb18-f3c5285fbe16"
+                                    },
+                                    "isActivated": true,
+                                    "additionalProperties": false,
+                                    "validationLevel": "Off",
+                                    "validationAction": "Warn",
+                                    "storageEngineName": "WiredTiger",
+                                    "collectionUsers": [],
+                                    "indexes": [],
+                                    "collation": {},
+                                    "sharding": {
+                                        "unique": true,
+                                        "collation": "null"
+                                    },
+                                    "GUID": "2e108ffa-37a7-4897-8036-9a373be497a3",
+                                    "bucketId": "53a4718e-2475-4660-ae29-e2977e68253d"
+                                },
+                                {
+                                    "collectionName": "order",
+                                    "type": "object",
+                                    "properties": [],
+                                    "definitions": {
+                                        "type": "definitions",
+                                        "properties": [],
+                                        "GUID": "f3827815-63b0-4ce0-83f0-66f12efb84e7"
+                                    },
+                                    "isActivated": true,
+                                    "additionalProperties": false,
+                                    "validationLevel": "Off",
+                                    "validationAction": "Warn",
+                                    "storageEngineName": "WiredTiger",
+                                    "collectionUsers": [],
+                                    "indexes": [],
+                                    "collation": {},
+                                    "sharding": {
+                                        "unique": true,
+                                        "collation": "null"
+                                    },
+                                    "GUID": "09796717-6ad2-4e52-8316-a9a8781824d0"
+                                }
+                            ],
+                            "buckets": [
+                                {
+                                    "name": "petopia",
+                                    "type": "bucket",
+                                    "collectionIds": [
+                                        "e0ad8576-63e5-40f9-a261-e234ba904852",
+                                        "2e108ffa-37a7-4897-8036-9a373be497a3"
+                                    ],
+                                    "backgroundColor": {
+                                        "r": 216,
+                                        "g": 0,
+                                        "b": 115,
+                                        "a": 1
+                                    },
+                                    "show": true,
+                                    "isActivated": true,
+                                    "GUID": "53a4718e-2475-4660-ae29-e2977e68253d"
+                                }
+                            ],
+                            "views": [],
+                            "relationships": [],
+                            "users": [],
+                            "diagramViews": [],
+                            "idToNameHashTable": {
+                                "53a4718e-2475-4660-ae29-e2977e68253d": "petopia",
+                                "e0ad8576-63e5-40f9-a261-e234ba904852": "user",
+                                "a385f366-0405-46b8-a32a-1a2aeb62b786": "product",
+                                "2e108ffa-37a7-4897-8036-9a373be497a3": "cart",
+                                "09796717-6ad2-4e52-8316-a9a8781824d0": "order"
+                            },
+                            "definitions": {
+                                "type": "definitions",
+                                "properties": [],
+                                "GUID": "821bedd3-fe00-448c-a5ae-587a45e114cc"
+                            },
+                            "polyglotDefinitions": {
+                                "type": "polyglotDefinitions",
+                                "properties": [],
+                                "GUID": "45fa0977-28f5-4f02-97e1-bb677595edcf"
+                            },
+                            "externalDefinitions": {
+                                "type": "externalDefinitions",
+                                "properties": [],
+                                "GUID": "7f6881ff-1409-4474-b09b-824cfaa452aa"
+                            },
+                            "modelAutoSaved": false,
+                            "sources": [],
+                            "decorativeSymbols": [],
+                            "dbVersion": "v7.x",
+                            "dbVendor": "MongoDB",
+                            "appTarget": "MONGODB",
+                            "creationTS": "2024-05-08T19:59:53.270Z",
+                            "GUID": "84076ad5-87ee-40c1-8736-5fd48741efd1",
+                            "modelChanged": true,
+                            "isLineageEnabled": false,
+                            "hackoladeMeta": {
+                                "validationErrors": {
+                                    "modelName": false
+                                }
+                            },
+                            "options": [
+                                "e0ad8576-63e5-40f9-a261-e234ba904852",
+                                "a385f366-0405-46b8-a32a-1a2aeb62b786",
+                                "2e108ffa-37a7-4897-8036-9a373be497a3",
+                                "09796717-6ad2-4e52-8316-a9a8781824d0"
+                            ],
+                            "compositeOptions": [
+                                "e0ad8576-63e5-40f9-a261-e234ba904852",
+                                "a385f366-0405-46b8-a32a-1a2aeb62b786",
+                                "2e108ffa-37a7-4897-8036-9a373be497a3",
+                                "09796717-6ad2-4e52-8316-a9a8781824d0"
+                            ]
+                        },
+                        "GUID": "9f7a62c8-d2d3-4958-a6f2-27d466992e52"
+                    }
+                ],
+                "diagramViews": [],
+                "idToNameHashTable": {
+                    "53a4718e-2475-4660-ae29-e2977e68253d": "petopia",
+                    "e0ad8576-63e5-40f9-a261-e234ba904852": "user",
+                    "a385f366-0405-46b8-a32a-1a2aeb62b786": "product",
+                    "2e108ffa-37a7-4897-8036-9a373be497a3": "cart",
+                    "09796717-6ad2-4e52-8316-a9a8781824d0": "order"
+                },
+                "definitions": {
+                    "type": "definitions",
+                    "properties": [],
+                    "GUID": "821bedd3-fe00-448c-a5ae-587a45e114cc"
+                },
+                "polyglotDefinitions": {
+                    "type": "polyglotDefinitions",
+                    "properties": [],
+                    "GUID": "45fa0977-28f5-4f02-97e1-bb677595edcf"
+                },
+                "externalDefinitions": {
+                    "type": "externalDefinitions",
+                    "properties": [],
+                    "GUID": "7f6881ff-1409-4474-b09b-824cfaa452aa"
+                },
+                "modelAutoSaved": true,
+                "sources": [],
+                "decorativeSymbols": [],
+                "dbVersion": "v7.x",
+                "dbVendor": "MongoDB",
+                "appTarget": "MONGODB",
+                "creationTS": "2024-05-08T19:59:53.270Z",
+                "GUID": "84076ad5-87ee-40c1-8736-5fd48741efd1",
+                "modelChanged": true,
+                "isLineageEnabled": false,
+                "hackoladeMeta": {
+                    "validationErrors": {
+                        "modelName": false
+                    }
+                },
+                "options": [
+                    "e0ad8576-63e5-40f9-a261-e234ba904852",
+                    "a385f366-0405-46b8-a32a-1a2aeb62b786",
+                    "2e108ffa-37a7-4897-8036-9a373be497a3",
+                    "09796717-6ad2-4e52-8316-a9a8781824d0"
+                ],
+                "compositeOptions": [
+                    "e0ad8576-63e5-40f9-a261-e234ba904852",
+                    "a385f366-0405-46b8-a32a-1a2aeb62b786",
+                    "2e108ffa-37a7-4897-8036-9a373be497a3",
+                    "09796717-6ad2-4e52-8316-a9a8781824d0"
+                ]
+            },
+            "GUID": "fa4866a3-6543-46b8-abbe-947222b090d5"
+        }
+    ],
+    "diagramViews": [],
+    "idToNameHashTable": {
+        "53a4718e-2475-4660-ae29-e2977e68253d": "petopia",
+        "e0ad8576-63e5-40f9-a261-e234ba904852": "user",
+        "2e108ffa-37a7-4897-8036-9a373be497a3": "cart",
+        "09796717-6ad2-4e52-8316-a9a8781824d0": "order",
+        "68e6949e-353d-4128-a41e-7ab8e34846cd": "product",
+        "51324ab6-2dfb-4077-95d0-8f505d675b30": "name",
+        "1f19e094-c324-4807-912e-6da58ac9b98a": "password",
+        "6d033119-e2cb-47c6-a49a-a444a03ea450": "email",
+        "84ab8b92-a26a-4522-afb8-c173eae5b45d": "image",
+        "86bc517f-8df1-4433-81ff-1dd4eb40b81c": "role",
+        "d9c5c19b-6ac5-4c71-9c2b-9f81474a80c2": "totalCartPrice",
+        "76c3ffee-663b-4121-be3c-929275f31887": "cartItems",
+        "2e2e9c56-807e-4a71-bf1c-e8b76613eee5": "totalPriceAfterDiscount",
+        "9e246dbb-4b6f-4d59-8326-181addc2e889": "userId",
+        "03723ed0-b7c1-4028-87de-d1d1a73b6c92": "user",
+        "6b30d704-1727-43cf-8089-8dd3d8784f36": "taxPrice",
+        "127c9ea3-9380-4a85-98f4-944d8016dde5": "cartItems",
+        "4500c0ac-22b0-4b9f-be24-d59d1467e169": "shippingPrice",
+        "75b9bdce-83f6-4bf1-b90b-0d0d53c331f1": "totalOrderPrice",
+        "25aedd5a-6323-436f-8b13-f55ca9a0baf8": "paymentMethodType",
+        "820899c8-ae12-4ac1-b9a5-993c38267917": "isPaid",
+        "45f6ca51-b389-4e7e-88b8-687796e1b863": "isDelivered",
+        "daa7bba5-dbb2-4e84-b21e-502513a812c6": "deliveredAt",
+        "b9634433-b31e-4732-8dd6-2bafc06dc31e": "paidAt",
+        "2fddf8e9-e8ea-45f2-a458-6b4330435436": "name",
+        "30079284-8f50-41d1-be19-d08bda2a20ff": "type",
+        "0fca41e6-56da-48be-b1b4-012f40a8a1b8": "category",
+        "a9843758-dbbe-4dd9-9d94-392e19aaca3b": "description",
+        "46718659-5658-4267-ad79-29fc01838fa0": "quantity",
+        "e66fc49c-df7e-411c-b379-436ff507718c": "gender",
+        "bc9d2271-8c92-45b9-833d-44e7bff947d3": "age",
+        "6f993c83-803b-489d-a1c3-bc98fb7fe0a5": "breed",
+        "91ac5352-a4ed-487c-8cca-00d26e81b2c6": "price",
+        "d1741e75-6eff-432c-bb44-4a199d47e647": "sold",
+        "343c0fbf-f98a-437e-8ee0-9f23b6f397dd": "UserCart",
+        "3d405aa9-c054-4888-8b72-1b6826744b51": "cartOrder",
+        "b56e79a3-f43d-4384-972b-e6dfd3f39beb": "orderProduct",
+        "322c14fd-9821-4585-bbfb-0c8464df5c6a": "cartProduct",
+        "bc3e3a15-b5d0-4bea-b342-a785686149bd": "image"
+    },
+    "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "821bedd3-fe00-448c-a5ae-587a45e114cc"
+    },
+    "polyglotDefinitions": {
+        "type": "polyglotDefinitions",
+        "properties": [],
+        "GUID": "45fa0977-28f5-4f02-97e1-bb677595edcf"
+    },
+    "externalDefinitions": {
+        "type": "externalDefinitions",
+        "properties": [],
+        "GUID": "7f6881ff-1409-4474-b09b-824cfaa452aa"
+    },
+    "sources": [],
+    "decorativeSymbols": [],
+    "dbVersion": "v7.x",
+    "dbVendor": "MongoDB",
+    "appTarget": "MONGODB",
+    "creationTS": "2024-05-08T19:59:53.270Z",
+    "GUID": "84076ad5-87ee-40c1-8736-5fd48741efd1",
+    "isLineageEnabled": false,
+    "hackoladeMeta": {
+        "validationErrors": {
+            "modelName": false
+        }
+    },
+    "lastModifTS": "2024-05-10T18:18:12.828Z",
+    "persistenceSchemaVersion": "7",
+    "isCreatedByPlugin": true,
+    "pluginInformation": {
+        "pluginEngineVersion": "1.0.0"
+    },
+    "applicationInformation": {
+        "version": "7.4.1"
+    },
+    "settings": {
+        "centralPane": {
+            "dbLevel": {
+                "erd": [
+                    {
+                        "GUID": "e0ad8576-63e5-40f9-a261-e234ba904852",
+                        "x": 1071,
+                        "y": 964,
+                        "width": 195,
+                        "height": 123,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "2e108ffa-37a7-4897-8036-9a373be497a3",
+                        "x": 1423,
+                        "y": 963,
+                        "width": 257,
+                        "height": 159,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "09796717-6ad2-4e52-8316-a9a8781824d0",
+                        "x": 1054,
+                        "y": 1183,
+                        "width": 269,
+                        "height": 267,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "68e6949e-353d-4128-a41e-7ab8e34846cd",
+                        "x": 1402,
+                        "y": 1196,
+                        "width": 213,
+                        "height": 231,
+                        "color": {}
+                    }
+                ],
+                "erdDefinitions": {
+                    "erd": [],
+                    "rootPath": [],
+                    "entities": [],
+                    "decorativeSymbols": []
+                },
+                "buckets": [
+                    {
+                        "x": 1014,
+                        "y": 923,
+                        "GUID": "53a4718e-2475-4660-ae29-e2977e68253d"
+                    }
+                ],
+                "collapsedNodes": [],
+                "activeRelationship": "",
+                "activeRelationshipFields": {
+                    "childField": [],
+                    "parentField": []
+                },
+                "selectedCollections": [],
+                "displayColorPicker": false,
+                "graphView": {
+                    "erd": [],
+                    "buckets": [],
+                    "decorativeSymbols": [],
+                    "forceLayout": true,
+                    "defaultLinkLength": 300
+                },
+                "diagramViews": [],
+                "decorativeSymbols": [],
+                "nestedCollectionsLayout": "horizontal",
+                "options": [
+                    {
+                        "autoWidth": false,
+                        "autoHeight": false,
+                        "GUID": "2e108ffa-37a7-4897-8036-9a373be497a3"
+                    }
+                ],
+                "relationshipUpdateDisabled": false
+            },
+            "collectionLevel": {},
+            "changed": false
+        },
+        "dtDiagram": {
+            "collapsedNodes": [],
+            "shouldDistributeCollections": false
+        }
+    }
+}

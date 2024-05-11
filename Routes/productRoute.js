@@ -14,7 +14,7 @@ router.route('/:id')
 .patch(authController.restrictTo('admin'), productController.updateProduct)
 .delete(authController.restrictTo('admin'), productController.deleteProduct);
 
-router.post('upload_product_picture', imageMiddleware.single('productImage'));
+router.post('/upload_product_picture', imageMiddleware.single('productImage'));
 
 module.exports = router;
 

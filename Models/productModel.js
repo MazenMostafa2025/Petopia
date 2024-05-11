@@ -26,10 +26,10 @@ const productSchema = new mongoose.Schema({
         lowercase: true,
         trim: true,
     },
-    // image: {
-    //     type: String,
-    //     required: true
-    // },
+    image: {
+        type: String,
+        required: true
+    },
     quantity: {type: Number, default: 1},
     gender: {
         type: String,
