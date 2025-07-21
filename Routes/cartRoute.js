@@ -15,7 +15,7 @@ router.route('/')
 
 
 router.route('/:itemId')
-.put(cartController.updateCartItemQuantity)
+.patch(cartController.updateCartItemQuantity)
 .delete(cartController.removeItem);
 
 module.exports = router;

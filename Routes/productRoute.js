@@ -1,9 +1,12 @@
 const express = require("express");
 const productController = require('../Controllers/productController');
 const authController = require('../Controllers/authController');
+const imageMiddleware = require('../utils/imageMiddleware');
 
 const router = express.Router();
 router.use(authController.protect);
+
+router.get('/search', productController.searchProducts);
 
 router.route('/')
 .get(productController.getAllProducts)
@@ -14,7 +17,7 @@ router.route('/:id')
 .patch(authController.restrictTo('admin'), productController.updateProduct)
 .delete(authController.restrictTo('admin'), productController.deleteProduct);
 
-router.post('/upload_product_picture', imageMiddleware.single('productImage'));
+router.post('/upload_product_picture', imageMiddleware.single('profileImage'));
 
 module.exports = router;
 

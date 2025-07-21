@@ -26,13 +26,6 @@ app.use(helmet());
 
 
 
-// Stripe webhook, BEFORE body-parser, because stripe needs the body as stream
-// app.post(
-//   '/webhook-checkout',
-//   bodyParser.raw({ type: 'application/json' }),
-//   bookingController.webhookCheckout
-// );
-
 // Body parser, reading data from body into req.body
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -42,6 +35,7 @@ app.use(mongoSanitize());
 
 // Data sanitization against XSS
 app.use(xss());
+
 
 // 3) ROUTES
 app.use('/api/v1/users', userRouter);

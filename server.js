@@ -1,3 +1,4 @@
+const elasticClient = require('./utils/elasticsearch');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
@@ -13,6 +14,11 @@ const DB = process.env.DATABASE.replace(
 mongoose
   .connect(DB)
   .then(() => console.log('DB connection successful!'));
+
+// Test Elasticsearch connection on startup
+elasticClient.ping()
+  .then(() => console.log('Elasticsearch connected!'))
+  .catch((err) => console.error('Elasticsearch connection failed:', err));
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
