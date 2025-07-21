@@ -311,7 +311,3 @@ _Form-data:_
 
 - **Elasticsearch**: Used for advanced, typo-tolerant, and fast product search.
 - **Redis**: Used for caching search results to improve performance and reduce load on Elasticsearch.
-
----
-
-**This documentation is up to date with the latest Elasticsearch and Redis integration.**
